@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Detalle de producto de BARRIO21">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/producto.css">
+
+    <title>Producto | BARRIO21</title>
+</head>
+
+<body class="pagina-producto">
+
+    <!-- Barra superior -->
+    <div class="barra-anuncio">
+
+        <p>
+            ENVÍOS GRATIS DESDE S/199
+            <span>CAMBIOS HASTA 30 DÍAS</span>
+        </p>
+
+    </div>
+
+
+    <!-- Navbar -->
+    <header class="header-principal">
+
+        <a href="index.html" class="logo">
+            <span class="logo-barrio">BARRIO</span>
+            <span class="logo-numero">21</span>
+        </a>
+
+        <nav class="navbar" id="navbarProducto">
+
+            <a href="index.html">INICIO</a>
+
+            <a href="tienda.html?categoria=Novedades">
+                NOVEDADES
+            </a>
+
+            <a href="tienda.html?categoria=Ropa">
+                ROPA
+            </a>
+
+            <a href="tienda.html?categoria=Sneakers">
+                SNEAKERS
+            </a>
+
+            <a href="tienda.html?categoria=Ofertas" class="enlace-ofertas">
+                OFERTAS
+            </a>
+
+        </nav>
+
+        <div class="acciones">
+
+            <a href="tienda.html" class="boton-icono" aria-label="Buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </a>
+
+            <button class="boton-icono" id="favoritoProductoSuperior" aria-label="Favoritos">
+                <i class="fa-regular fa-heart"></i>
+
+                <span class="contador-favoritos" id="contadorFavoritosProducto">
+                    0
+                </span>
+            </button>
+
+            <button class="boton-icono carrito-boton" id="botonCarritoProducto" aria-label="Carrito">
+                <i class="fa-solid fa-bag-shopping"></i>
+
+                <span class="contador-carrito" id="contadorCarritoProducto">
+                    0
+                </span>
+            </button>
+
+            <button class="boton-icono boton-menu" id="botonMenuProducto" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+    <div class="menu-fondo" id="menuFondoProducto"></div>
+
+
+    <main>
+
+        <!-- Detalle -->
+        <section class="detalle-producto" id="detalleProducto">
+
+            <!-- Ruta -->
+            <div class="detalle-ruta">
+
+                <a href="index.html">INICIO</a>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <a href="tienda.html">TIENDA</a>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+                <span id="rutaProducto">PRODUCTO</span>
+
+            </div>
+
+
+            <div class="detalle-grid">
+
+                <!-- Imagen -->
+                <div class="detalle-galeria">
+
+                    <div class="detalle-imagen-principal">
+
+                        <img id="productoImagen" src="" alt="Producto BARRIO21">
+
+                        <span class="detalle-etiqueta" id="productoEtiqueta"></span>
+
+                    </div>
+
+                    <p>
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                        Pasa el cursor sobre la imagen para acercarla
+                    </p>
+
+                </div>
+
+
+                <!-- Información -->
+                <div class="detalle-informacion">
+
+                    <p class="detalle-categoria" id="productoCategoria">
+                        CARGANDO PRODUCTO
+                    </p>
+
+                    <h1 id="productoNombre">
+                        BARRIO21
+                    </h1>
+
+                    <div class="detalle-valoracion">
+
+                        <div>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+
+                        <span>4.9 · 28 reseñas</span>
+
+                    </div>
+
+                    <div class="detalle-precios">
+
+                        <strong id="productoPrecio">
+                            S/ 0.00
+                        </strong>
+
+                        <span id="productoPrecioAnterior"></span>
+
+                    </div>
+
+                    <p class="detalle-descripcion" id="productoDescripcion">
+                        Cargando información del producto...
+                    </p>
+
+
+                    <div class="detalle-datos">
+
+                        <div>
+                            <span>COLOR</span>
+                            <strong id="productoColor">—</strong>
+                        </div>
+
+                        <div>
+                            <span>CÓDIGO</span>
+                            <strong id="productoSku">—</strong>
+                        </div>
+
+                    </div>
+
+
+                    <!-- Tallas -->
+                    <div class="detalle-tallas-seccion">
+
+                        <div class="detalle-tallas-encabezado">
+
+                            <span>SELECCIONA TU TALLA</span>
+
+                            <button type="button">
+                                GUÍA DE TALLAS
+                            </button>
+
+                        </div>
+
+                        <div class="detalle-tallas" id="productoTallas"></div>
+
+                        <p class="detalle-error-talla" id="errorTallaProducto">
+                            Selecciona una talla antes de continuar.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Cantidad -->
+                    <div class="detalle-cantidad-seccion">
+
+                        <span>CANTIDAD</span>
+
+                        <div class="detalle-cantidad">
+
+                            <button type="button" id="disminuirCantidad" aria-label="Disminuir cantidad">
+                                −
+                            </button>
+
+                            <strong id="cantidadProducto">1</strong>
+
+                            <button type="button" id="aumentarCantidad" aria-label="Aumentar cantidad">
+                                +
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Acciones -->
+                    <div class="detalle-acciones">
+
+                        <button class="detalle-agregar" id="agregarProductoCarrito">
+                            AGREGAR AL CARRITO
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </button>
+
+                        <button class="detalle-favorito" id="guardarProductoFavorito"
+                            aria-label="Guardar como favorito">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+
+                    </div>
+
+
+                    <p class="detalle-stock" id="productoStock">
+                        <i class="fa-solid fa-circle"></i>
+                        Consultando disponibilidad...
+                    </p>
+
+
+                    <!-- Información adicional -->
+                    <div class="detalle-servicios">
+
+                        <div>
+                            <i class="fa-solid fa-truck-fast"></i>
+
+                            <span>
+                                <strong>Envíos a todo el Perú</strong>
+                                Gratis desde S/199
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-rotate-left"></i>
+
+                            <span>
+                                <strong>Cambios fáciles</strong>
+                                Hasta 30 días
+                            </span>
+                        </div>
+
+                        <div>
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                            <span>
+                                <strong>Compra segura</strong>
+                                Tus datos están protegidos
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Productos relacionados -->
+        <section class="productos-relacionados">
+
+            <div class="relacionados-encabezado">
+
+                <div>
+                    <p>TAMBIÉN PODRÍA GUSTARTE</p>
+                    <h2>COMPLETA EL LOOK</h2>
+                </div>
+
+                <a href="tienda.html">
+                    VER TODA LA TIENDA
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="productos-grid" id="contenedorRelacionados"></div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-principal">
+
+            <div class="footer-marca">
+
+                <a href="index.html" class="footer-logo">
+                    BARRIO<span>21</span>
+                </a>
+
+                <p>
+                    Streetwear y sneakers para quienes
+                    hacen sus propias reglas.
+                </p>
+
+                <div class="footer-redes">
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-columna">
+                <h3>COMPRAR</h3>
+
+                <a href="tienda.html?categoria=Novedades">
+                    Novedades
+                </a>
+
+                <a href="tienda.html?categoria=Ropa">
+                    Streetwear
+                </a>
+
+                <a href="tienda.html?categoria=Sneakers">
+                    Sneakers
+                </a>
+
+                <a href="tienda.html?categoria=Ofertas">
+                    Ofertas
+                </a>
+            </div>
+
+            <div class="footer-columna">
+                <h3>AYUDA</h3>
+
+                <a href="#">Preguntas frecuentes</a>
+                <a href="#">Envíos y entregas</a>
+                <a href="#">Cambios y devoluciones</a>
+                <a href="#">Guía de tallas</a>
+            </div>
+
+            <div class="footer-columna">
+                <h3>CONTACTO</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Lima, Perú
+                </p>
+
+                <p>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    +51 999 999 999
+                </p>
+
+                <p>
+                    <i class="fa-regular fa-envelope"></i>
+                    contacto@barrio21.pe
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-inferior">
+
+            <span>
+                © <span id="anioProducto"></span> BARRIO21
+            </span>
+
+            <span>
+                PROYECTO DE PORTAFOLIO · SEBASTIAN LOPEZ
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script src="js/productos.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/carrito-global.js"></script>
+    <script src="js/producto.js"></script>
+
+</body>
+
+</html>

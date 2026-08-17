@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BARRIO21 - Tienda online de streetwear y sneakers">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/estilos.css">
+
+    <title>BARRIO21 | Streetwear & Sneakers</title>
+</head>
+
+<body class="pagina-inicio">
+
+    <!-- Barra superior -->
+    <div class="barra-anuncio">
+        <p>
+            ENVÍOS GRATIS DESDE S/199
+            <span>CAMBIOS HASTA 30 DÍAS</span>
+        </p>
+    </div>
+
+    <!-- Navbar -->
+    <header class="header-principal">
+
+        <a href="#" class="logo">
+            <span class="logo-barrio">BARRIO</span>
+            <span class="logo-numero">21</span>
+        </a>
+
+        <nav class="navbar" id="navbar">
+
+            <a href="#inicio" class="activo">
+                INICIO
+            </a>
+
+            <a href="tienda.html?categoria=Novedades">
+                NOVEDADES
+            </a>
+
+            <a href="tienda.html?categoria=Ropa">
+                ROPA
+            </a>
+
+            <a href="tienda.html?categoria=Sneakers">
+                SNEAKERS
+            </a>
+
+            <a href="tienda.html?categoria=Ofertas" class="enlace-ofertas">
+                OFERTAS
+            </a>
+
+        </nav>
+
+        <div class="acciones">
+
+            <button class="boton-icono" aria-label="Buscar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
+            <button class="boton-icono" id="botonFavoritos" aria-label="Favoritos">
+                <i class="fa-regular fa-heart"></i>
+                <span class="contador-favoritos" id="contadorFavoritos">0</span>
+            </button>
+
+            <button class="boton-icono carrito-boton" id="botonCarrito" aria-label="Abrir carrito">
+                <i class="fa-solid fa-bag-shopping"></i>
+                <span class="contador-carrito" id="contadorCarrito">0</span>
+            </button>
+
+            <button class="boton-icono boton-menu" id="botonMenu" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+    <div class="menu-fondo" id="menuFondo"></div>
+
+    <!-- Portada principal -->
+    <main>
+
+        <section class="hero" id="inicio">
+
+            <div class="hero-contenido">
+
+                <p class="hero-etiqueta">
+                    NUEVA COLECCIÓN · 2026
+                </p>
+
+                <h1 class="hero-titulo">
+                    ROMPE
+                    <span>LAS REGLAS.</span>
+                </h1>
+
+                <p class="hero-descripcion">
+                    Streetwear y sneakers para quienes no siguen tendencias:
+                    las crean.
+                </p>
+
+                <div class="hero-botones">
+
+                    <a href="tienda.html" class="boton boton-rojo">
+                        VER COLECCIÓN
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                    <a href="tienda.html?categoria=Sneakers" class="boton boton-transparente">
+                        EXPLORAR SNEAKERS
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-inferior">
+
+                <span>01 / COLECCIÓN URBANA</span>
+
+                <a href="#productos" class="hero-scroll">
+                    DESCUBRIR
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+        <!-- Beneficios de compra -->
+        <section class="beneficios">
+
+            <article class="beneficio">
+                <i class="fa-solid fa-truck-fast"></i>
+
+                <div>
+                    <h3>ENVÍO GRATIS</h3>
+                    <p>En compras desde S/199</p>
+                </div>
+            </article>
+
+            <article class="beneficio">
+                <i class="fa-solid fa-rotate-left"></i>
+
+                <div>
+                    <h3>CAMBIOS FÁCILES</h3>
+                    <p>Hasta 30 días</p>
+                </div>
+            </article>
+
+            <article class="beneficio">
+                <i class="fa-solid fa-shield-halved"></i>
+
+                <div>
+                    <h3>PAGO SEGURO</h3>
+                    <p>Tus datos están protegidos</p>
+                </div>
+            </article>
+
+            <article class="beneficio">
+                <i class="fa-solid fa-headset"></i>
+
+                <div>
+                    <h3>ATENCIÓN PERSONAL</h3>
+                    <p>Estamos para ayudarte</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- Colecciones editoriales -->
+        <section class="editorial-colecciones" id="colecciones">
+
+            <div class="editorial-encabezado">
+
+                <div>
+                    <p>CURADURÍA URBANA · BARRIO21</p>
+                    <h2>ELIGE TU LADO.</h2>
+                </div>
+
+                <span>
+                    Dos colecciones.<br>
+                    Una misma actitud.
+                </span>
+
+            </div>
+
+            <div class="editorial-grid">
+
+                <!-- Streetwear -->
+                <article class="editorial-tarjeta">
+
+                    <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?auto=format&fit=crop&w=1200&q=85"
+                        alt="Colección streetwear de BARRIO21" loading="lazy">
+
+                    <div class="editorial-capa"></div>
+
+                    <div class="editorial-contenido">
+
+                        <span>01 / STREET CULTURE</span>
+
+                        <h3>STREETWEAR</h3>
+
+                        <p>
+                            Prendas amplias, colores sólidos y diseños
+                            creados para destacar.
+                        </p>
+
+                        <a href="tienda.html?categoria=Ropa" class="editorial-enlace">
+                            EXPLORAR ROPA
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+                <!-- Sneakers -->
+                <article class="editorial-tarjeta">
+
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1200&q=85"
+                        alt="Colección de sneakers de BARRIO21" loading="lazy">
+
+                    <div class="editorial-capa"></div>
+
+                    <div class="editorial-contenido">
+
+                        <span>02 / STEP DIFFERENT</span>
+
+                        <h3>SNEAKERS</h3>
+
+                        <p>
+                            Diseñados para caminar la ciudad con comodidad,
+                            identidad y carácter.
+                        </p>
+
+                        <a href="tienda.html?categoria=Sneakers" class="editorial-enlace">
+                            VER SNEAKERS
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- Catálogo de productos -->
+        <section class="catalogo" id="productos">
+
+            <div class="catalogo-encabezado">
+
+                <div>
+                    <p class="seccion-etiqueta">DROP 01 · BARRIO21</p>
+                    <h2>NUEVOS INGRESOS</h2>
+                </div>
+
+                <p class="contador-productos" id="contadorProductos">
+                    0 PRODUCTOS
+                </p>
+
+            </div>
+
+            <a href="tienda.html" class="enlace-tienda-completa">
+                VER LOS 24 PRODUCTOS
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <!-- Buscador y filtros -->
+            <div class="herramientas-catalogo">
+
+                <div class="buscador-catalogo">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    <input type="search" id="buscadorProductos" placeholder="Buscar productos..." autocomplete="off">
+                </div>
+
+                <div class="filtros-categorias">
+
+                    <button class="filtro-boton activo" data-categoria="Todos">
+                        TODOS
+                    </button>
+
+                    <button class="filtro-boton" data-categoria="Streetwear">
+                        STREETWEAR
+                    </button>
+
+                    <button class="filtro-boton" data-categoria="Pantalones">
+                        PANTALONES
+                    </button>
+
+                    <button class="filtro-boton" data-categoria="Chaquetas">
+                        CHAQUETAS
+                    </button>
+
+                    <button class="filtro-boton" data-categoria="Sneakers">
+                        SNEAKERS
+                    </button>
+
+                    <button class="filtro-boton" data-categoria="Accesorios">
+                        ACCESORIOS
+                    </button>
+
+                </div>
+
+                <select id="ordenProductos" class="orden-productos">
+                    <option value="destacados">Ordenar: destacados</option>
+                    <option value="menor-precio">Precio: menor a mayor</option>
+                    <option value="mayor-precio">Precio: mayor a menor</option>
+                    <option value="nombre">Nombre: A - Z</option>
+                </select>
+
+            </div>
+
+            <!-- JavaScript colocará aquí los productos -->
+            <div class="productos-grid" id="contenedorProductos"></div>
+
+        </section>
+
+        <!-- Identidad de marca -->
+        <section class="manifiesto" id="nosotros">
+
+            <div class="manifiesto-marca" aria-hidden="true">
+                BARRIO21
+            </div>
+
+            <div class="manifiesto-contenido">
+
+                <p>ESTO ES BARRIO21</p>
+
+                <h2>
+                    NO VENDEMOS ROPA.<br>
+                    VENDEMOS <span>ACTITUD.</span>
+                </h2>
+
+                <div class="manifiesto-texto">
+
+                    <p>
+                        Nacimos para quienes construyen su propio camino,
+                        mezclan estilos y no necesitan permiso para destacar.
+                    </p>
+
+                    <p>
+                        BARRIO21 une streetwear, sneakers y cultura urbana
+                        en una sola comunidad.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+
+            <div class="newsletter-texto">
+
+                <p>ÚNETE AL BARRIO</p>
+
+                <h2>
+                    ENTÉRATE ANTES<br>
+                    QUE <span>TODOS.</span>
+                </h2>
+
+            </div>
+
+            <div class="newsletter-formulario">
+
+                <p>
+                    Recibe nuevos lanzamientos, descuentos exclusivos
+                    y contenido de cultura urbana.
+                </p>
+
+                <form id="formNewsletter">
+
+                    <div>
+                        <input type="email" id="correoNewsletter" placeholder="TU CORREO ELECTRÓNICO" required>
+
+                        <button type="submit" aria-label="Suscribirse">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <span class="newsletter-mensaje" id="mensajeNewsletter"></span>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="footer-principal">
+
+            <div class="footer-marca">
+
+                <a href="#inicio" class="footer-logo">
+                    BARRIO<span>21</span>
+                </a>
+
+                <p>
+                    Streetwear y sneakers para quienes
+                    hacen sus propias reglas.
+                </p>
+
+                <div class="footer-redes">
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="footer-columna">
+                <h3>COMPRAR</h3>
+
+                <a href="tienda.html?categoria=Novedades">
+                    Novedades
+                </a>
+
+                <a href="tienda.html?categoria=Ropa">
+                    Streetwear
+                </a>
+
+                <a href="tienda.html?categoria=Sneakers">
+                    Sneakers
+                </a>
+
+                <a href="tienda.html?categoria=Ofertas">
+                    Ofertas
+                </a>
+            </div>
+
+            <div class="footer-columna">
+                <h3>AYUDA</h3>
+
+                <a href="#">Preguntas frecuentes</a>
+                <a href="#">Envíos y entregas</a>
+                <a href="#">Cambios y devoluciones</a>
+                <a href="#">Guía de tallas</a>
+            </div>
+
+            <div class="footer-columna">
+                <h3>CONTACTO</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Lima, Perú
+                </p>
+
+                <p>
+                    <i class="fa-brands fa-whatsapp"></i>
+                    +51 999 999 999
+                </p>
+
+                <p>
+                    <i class="fa-regular fa-envelope"></i>
+                    contacto@barrio21.pe
+                </p>
+            </div>
+
+        </div>
+
+        <div class="footer-inferior">
+
+            <span>
+                © <span id="anioActual"></span> BARRIO21
+            </span>
+
+            <span>
+                PROYECTO DE PORTAFOLIO · SEBASTIAN LOPEZ
+            </span>
+
+        </div>
+
+    </footer>
+
+    <!-- Fondo del carrito -->
+    <div class="carrito-fondo" id="carritoFondo"></div>
+
+    <!-- Panel lateral del carrito -->
+    <aside class="carrito-panel" id="carritoPanel" aria-hidden="true">
+
+        <header class="carrito-header">
+
+            <div>
+                <p>MI COMPRA</p>
+
+                <h2>
+                    CARRITO
+                    <span id="carritoCantidadTexto">(0)</span>
+                </h2>
+            </div>
+
+            <button class="carrito-cerrar" id="cerrarCarrito" aria-label="Cerrar carrito">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </header>
+
+        <!-- JavaScript colocará aquí los productos -->
+        <div class="carrito-contenido" id="carritoContenido"></div>
+
+        <footer class="carrito-resumen oculto" id="carritoResumen">
+
+            <div class="carrito-subtotal">
+                <span>SUBTOTAL</span>
+                <strong id="carritoSubtotal">S/ 0.00</strong>
+            </div>
+
+            <p>
+                El costo de envío se calculará al finalizar la compra.
+            </p>
+
+            <button class="carrito-finalizar" id="finalizarCompra">
+                FINALIZAR COMPRA
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+
+            <button class="carrito-seguir" id="seguirComprando">
+                SEGUIR COMPRANDO
+            </button>
+
+        </footer>
+
+    </aside>
+
+    <!-- Checkout -->
+    <div class="checkout-fondo" id="checkoutFondo" aria-hidden="true">
+
+        <section class="checkout-modal">
+
+            <button class="checkout-cerrar" id="cerrarCheckout" aria-label="Cerrar checkout">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <!-- Formulario -->
+            <div class="checkout-contenido" id="checkoutFormularioVista">
+
+                <div class="checkout-formulario-contenedor">
+
+                    <p class="checkout-etiqueta">FINALIZAR COMPRA</p>
+                    <h2>DATOS DE ENVÍO</h2>
+
+                    <form id="formCheckout">
+
+                        <div class="checkout-campo">
+                            <label for="checkoutNombre">Nombres y apellidos</label>
+
+                            <input type="text" id="checkoutNombre" name="nombre" placeholder="Ejemplo: Sebastian Lopez"
+                                required>
+                        </div>
+
+                        <div class="checkout-fila">
+
+                            <div class="checkout-campo">
+                                <label for="checkoutCorreo">Correo electrónico</label>
+
+                                <input type="email" id="checkoutCorreo" name="correo" placeholder="correo@ejemplo.com"
+                                    required>
+                            </div>
+
+                            <div class="checkout-campo">
+                                <label for="checkoutTelefono">Celular</label>
+
+                                <input type="tel" id="checkoutTelefono" name="telefono" placeholder="987654321"
+                                    pattern="[0-9]{9}" maxlength="9" required>
+                            </div>
+
+                        </div>
+
+                        <div class="checkout-campo">
+                            <label for="checkoutDireccion">Dirección</label>
+
+                            <input type="text" id="checkoutDireccion" name="direccion"
+                                placeholder="Avenida, calle y número" required>
+                        </div>
+
+                        <div class="checkout-fila">
+
+                            <div class="checkout-campo">
+                                <label for="checkoutDistrito">Distrito</label>
+
+                                <input type="text" id="checkoutDistrito" name="distrito"
+                                    placeholder="Ejemplo: Villa María del Triunfo" required>
+                            </div>
+
+                            <div class="checkout-campo">
+                                <label for="checkoutReferencia">Referencia</label>
+
+                                <input type="text" id="checkoutReferencia" name="referencia" placeholder="Opcional">
+                            </div>
+
+                        </div>
+
+                        <fieldset class="checkout-pagos">
+
+                            <legend>MÉTODO DE PAGO</legend>
+
+                            <label class="metodo-pago">
+                                <input type="radio" name="metodoPago" value="Yape o Plin" checked>
+
+                                <span>
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                    Yape o Plin
+                                </span>
+                            </label>
+
+                            <label class="metodo-pago">
+                                <input type="radio" name="metodoPago" value="Tarjeta">
+
+                                <span>
+                                    <i class="fa-regular fa-credit-card"></i>
+                                    Tarjeta
+                                </span>
+                            </label>
+
+                            <label class="metodo-pago">
+                                <input type="radio" name="metodoPago" value="Contraentrega">
+
+                                <span>
+                                    <i class="fa-solid fa-box"></i>
+                                    Contraentrega
+                                </span>
+                            </label>
+
+                        </fieldset>
+
+                        <label class="checkout-terminos">
+                            <input type="checkbox" required>
+
+                            <span>
+                                Confirmo que los datos ingresados son correctos.
+                            </span>
+                        </label>
+
+                        <button type="submit" class="checkout-confirmar">
+                            CONFIRMAR PEDIDO
+                            <i class="fa-solid fa-lock"></i>
+                        </button>
+
+                        <p class="checkout-demo">
+                            Compra demostrativa. No se realizará ningún cobro real.
+                        </p>
+
+                    </form>
+
+                </div>
+
+                <!-- Resumen -->
+                <aside class="checkout-resumen">
+
+                    <p class="checkout-etiqueta">TU PEDIDO</p>
+                    <h3>RESUMEN</h3>
+
+                    <div class="checkout-productos" id="checkoutProductos"></div>
+
+                    <div class="checkout-totales">
+
+                        <div>
+                            <span>Subtotal</span>
+                            <strong id="checkoutSubtotal">S/ 0.00</strong>
+                        </div>
+
+                        <div>
+                            <span>Envío</span>
+                            <strong id="checkoutEnvio">S/ 0.00</strong>
+                        </div>
+
+                        <div class="checkout-total-final">
+                            <span>TOTAL</span>
+                            <strong id="checkoutTotal">S/ 0.00</strong>
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+            <!-- Confirmación -->
+            <div class="checkout-exito oculto" id="checkoutExito">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                <p>PEDIDO CONFIRMADO</p>
+
+                <h2>¡GRACIAS POR TU COMPRA!</h2>
+
+                <span>
+                    Tu número de pedido es
+                    <strong id="codigoPedido"></strong>
+                </span>
+
+                <span>
+                    Total:
+                    <strong id="totalPedidoConfirmado"></strong>
+                </span>
+
+                <button id="volverTienda">
+                    VOLVER A LA TIENDA
+                </button>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- Vista rápida del producto -->
+    <div class="modal-fondo" id="modalProducto" aria-hidden="true">
+
+        <section class="modal-producto" role="dialog" aria-modal="true" aria-labelledby="modalNombre">
+
+            <button class="modal-cerrar" id="cerrarModalProducto" aria-label="Cerrar">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-imagen-contenedor">
+                <img id="modalImagen" src="" alt="">
+            </div>
+
+            <div class="modal-informacion">
+
+                <p class="modal-categoria" id="modalCategoria"></p>
+
+                <h2 id="modalNombre"></h2>
+
+                <p class="modal-precio" id="modalPrecio"></p>
+
+                <p class="modal-descripcion" id="modalDescripcion"></p>
+
+                <div class="modal-tallas-encabezado">
+                    <span>SELECCIONA TU TALLA</span>
+                    <button type="button">GUÍA DE TALLAS</button>
+                </div>
+
+                <div class="modal-tallas" id="modalTallas"></div>
+
+                <p class="modal-mensaje-talla" id="mensajeTalla">
+                    Debes seleccionar una talla.
+                </p>
+
+                <button class="modal-agregar" id="modalAgregarCarrito" disabled>
+                    SELECCIONA UNA TALLA
+                </button>
+
+                <div class="modal-detalles">
+
+                    <p>
+                        <i class="fa-solid fa-truck-fast"></i>
+                        Envíos a todo el Perú
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Cambios hasta 30 días
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="js/productos.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

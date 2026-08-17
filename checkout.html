@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Finaliza tu compra en BARRIO21">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <!-- Tipografías -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/checkout.css">
+
+    <title>Finalizar compra | BARRIO21</title>
+</head>
+
+<body class="pagina-checkout">
+
+    <!-- Barra superior -->
+    <div class="barra-anuncio">
+
+        <p>
+            COMPRA DEMOSTRATIVA · NO SE REALIZARÁ NINGÚN COBRO REAL
+        </p>
+
+    </div>
+
+
+    <!-- Encabezado simplificado -->
+    <header class="pago-header">
+
+        <a href="index.html" class="logo">
+            <span class="logo-barrio">BARRIO</span>
+            <span class="logo-numero">21</span>
+        </a>
+
+        <div class="pago-seguro">
+            <i class="fa-solid fa-lock"></i>
+            PAGO SEGURO
+        </div>
+
+        <a href="tienda.html" class="pago-volver">
+            <i class="fa-solid fa-arrow-left"></i>
+            VOLVER A LA TIENDA
+        </a>
+
+    </header>
+
+
+    <main class="pago-main">
+
+        <!-- Progreso -->
+        <div class="pago-progreso">
+
+            <div class="completado">
+                <span>1</span>
+                <p>CARRITO</p>
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+            <div class="activo">
+                <span>2</span>
+                <p>DATOS Y PAGO</p>
+            </div>
+
+            <i class="fa-solid fa-chevron-right"></i>
+
+            <div>
+                <span>3</span>
+                <p>CONFIRMACIÓN</p>
+            </div>
+
+        </div>
+
+
+        <!-- Carrito vacío -->
+        <section class="pago-vacio oculto" id="checkoutVacio">
+
+            <i class="fa-solid fa-bag-shopping"></i>
+
+            <p>TU CARRITO ESTÁ VACÍO</p>
+
+            <h1>ENCUENTRA TU PRÓXIMO ESTILO.</h1>
+
+            <span>
+                Agrega productos antes de iniciar el proceso de compra.
+            </span>
+
+            <a href="tienda.html">
+                IR A LA TIENDA
+            </a>
+
+        </section>
+
+
+        <!-- Proceso de compra -->
+        <section class="pago-contenido" id="checkoutProceso">
+
+            <!-- Formulario -->
+            <div class="pago-formulario-contenedor">
+
+                <div class="pago-titulo">
+
+                    <p>FINALIZAR COMPRA</p>
+                    <h1>TUS DATOS.</h1>
+
+                </div>
+
+
+                <form id="formCheckoutPagina">
+
+                    <!-- Contacto -->
+                    <fieldset class="pago-bloque">
+
+                        <legend>
+                            <span>01</span>
+                            INFORMACIÓN DE CONTACTO
+                        </legend>
+
+                        <div class="pago-campo">
+
+                            <label for="pagoNombre">
+                                Nombres y apellidos
+                            </label>
+
+                            <input type="text" id="pagoNombre" name="nombre" placeholder="Ejemplo: Sebastian Lopez"
+                                autocomplete="name" required>
+
+                        </div>
+
+                        <div class="pago-fila">
+
+                            <div class="pago-campo">
+
+                                <label for="pagoCorreo">
+                                    Correo electrónico
+                                </label>
+
+                                <input type="email" id="pagoCorreo" name="correo" placeholder="correo@ejemplo.com"
+                                    autocomplete="email" required>
+
+                            </div>
+
+                            <div class="pago-campo">
+
+                                <label for="pagoCelular">
+                                    Celular
+                                </label>
+
+                                <input type="tel" id="pagoCelular" name="celular" placeholder="987654321"
+                                    pattern="[0-9]{9}" maxlength="9" inputmode="numeric" autocomplete="tel" required>
+
+                            </div>
+
+                        </div>
+
+                    </fieldset>
+
+
+                    <!-- Envío -->
+                    <fieldset class="pago-bloque">
+
+                        <legend>
+                            <span>02</span>
+                            DIRECCIÓN DE ENVÍO
+                        </legend>
+
+                        <div class="pago-campo">
+
+                            <label for="pagoDireccion">
+                                Dirección
+                            </label>
+
+                            <input type="text" id="pagoDireccion" name="direccion" placeholder="Avenida, calle y número"
+                                autocomplete="street-address" required>
+
+                        </div>
+
+                        <div class="pago-fila">
+
+                            <div class="pago-campo">
+
+                                <label for="pagoDistrito">
+                                    Distrito
+                                </label>
+
+                                <input type="text" id="pagoDistrito" name="distrito"
+                                    placeholder="Villa María del Triunfo" required>
+
+                            </div>
+
+                            <div class="pago-campo">
+
+                                <label for="pagoReferencia">
+                                    Referencia
+                                </label>
+
+                                <input type="text" id="pagoReferencia" name="referencia" placeholder="Cerca de...">
+
+                            </div>
+
+                        </div>
+
+                        <div class="pago-campo">
+
+                            <label for="pagoDepartamento">
+                                Departamento
+                            </label>
+
+                            <select id="pagoDepartamento" name="departamento" required>
+                                <option value="">
+                                    Selecciona una opción
+                                </option>
+
+                                <option value="Lima">Lima</option>
+                                <option value="Arequipa">Arequipa</option>
+                                <option value="Cusco">Cusco</option>
+                                <option value="La Libertad">La Libertad</option>
+                                <option value="Piura">Piura</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+
+                        </div>
+
+                    </fieldset>
+
+
+                    <!-- Método de pago -->
+                    <fieldset class="pago-bloque">
+
+                        <legend>
+                            <span>03</span>
+                            MÉTODO DE PAGO
+                        </legend>
+
+                        <div class="pago-metodos">
+
+                            <label class="pago-metodo">
+
+                                <input type="radio" name="metodoPago" value="Yape o Plin" checked>
+
+                                <span>
+                                    <i class="fa-solid fa-mobile-screen"></i>
+
+                                    <strong>YAPE O PLIN</strong>
+
+                                    <small>
+                                        Pago móvil demostrativo
+                                    </small>
+                                </span>
+
+                            </label>
+
+
+                            <label class="pago-metodo">
+
+                                <input type="radio" name="metodoPago" value="Tarjeta">
+
+                                <span>
+                                    <i class="fa-regular fa-credit-card"></i>
+
+                                    <strong>TARJETA</strong>
+
+                                    <small>
+                                        Visa o Mastercard
+                                    </small>
+                                </span>
+
+                            </label>
+
+
+                            <label class="pago-metodo">
+
+                                <input type="radio" name="metodoPago" value="Contraentrega">
+
+                                <span>
+                                    <i class="fa-solid fa-box"></i>
+
+                                    <strong>CONTRAENTREGA</strong>
+
+                                    <small>
+                                        Disponible en Lima
+                                    </small>
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </fieldset>
+
+
+                    <label class="pago-terminos">
+
+                        <input type="checkbox" required>
+
+                        <span>
+                            Confirmo que los datos ingresados son correctos
+                            y acepto los términos de la compra demostrativa.
+                        </span>
+
+                    </label>
+
+
+                    <button type="submit" class="pago-confirmar">
+                        CONFIRMAR PEDIDO
+
+                        <span>
+                            <i class="fa-solid fa-lock"></i>
+                            COMPRA SEGURA
+                        </span>
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- Resumen -->
+            <aside class="pago-resumen">
+
+                <div class="pago-resumen-titulo">
+
+                    <p>TU COMPRA</p>
+
+                    <h2>
+                        RESUMEN
+                        <span id="cantidadResumen">(0)</span>
+                    </h2>
+
+                </div>
+
+
+                <div class="pago-productos" id="checkoutListaProductos"></div>
+
+
+                <div class="pago-totales">
+
+                    <div>
+                        <span>Subtotal</span>
+                        <strong id="checkoutSubtotal">
+                            S/ 0.00
+                        </strong>
+                    </div>
+
+                    <div>
+                        <span>Envío</span>
+                        <strong id="checkoutEnvio">
+                            S/ 0.00
+                        </strong>
+                    </div>
+
+                    <div class="pago-total">
+                        <span>TOTAL</span>
+
+                        <strong id="checkoutTotal">
+                            S/ 0.00
+                        </strong>
+                    </div>
+
+                </div>
+
+
+                <div class="pago-garantias">
+
+                    <p>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Datos protegidos
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-rotate-left"></i>
+                        Cambios hasta 30 días
+                    </p>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+
+        <!-- Confirmación final -->
+        <section class="pago-exito oculto" id="checkoutConfirmacion">
+
+            <div class="pago-exito-icono">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+            <p>PEDIDO CONFIRMADO</p>
+
+            <h1>¡BIENVENIDO AL BARRIO!</h1>
+
+            <span>
+                Tu número de pedido es:
+            </span>
+
+            <strong id="codigoPedidoConfirmado">
+                B21-0000000
+            </strong>
+
+            <span>
+                Total del pedido:
+                <b id="totalPedidoConfirmado">
+                    S/ 0.00
+                </b>
+            </span>
+
+            <div class="pago-exito-acciones">
+
+                <a href="tienda.html">
+                    SEGUIR COMPRANDO
+                </a>
+
+                <a href="index.html">
+                    VOLVER AL INICIO
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer pequeño -->
+    <footer class="pago-footer">
+
+        <span>
+            © <span id="anioCheckout"></span> BARRIO21
+        </span>
+
+        <span>
+            COMPRA DEMOSTRATIVA · PROYECTO DE SEBASTIAN LOPEZ
+        </span>
+
+    </footer>
+
+
+    <script src="js/productos.js"></script>
+    <script src="js/comun.js"></script>
+    <script src="js/checkout.js"></script>
+
+</body>
+
+</html>

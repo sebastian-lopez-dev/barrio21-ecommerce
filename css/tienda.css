@@ -1,0 +1,134 @@
+/* ==============================
+   PORTADA DE LA TIENDA
+================================= */
+
+.tienda-portada {
+    min-height: 390px;
+    padding: 55px 6% 65px;
+
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    background-color: var(--negro);
+    color: var(--blanco);
+}
+
+.tienda-ruta {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    color: #898989;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.tienda-ruta a:hover {
+    color: var(--rojo);
+}
+
+.tienda-ruta i {
+    font-size: 7px;
+}
+
+.tienda-ruta span {
+    color: var(--blanco);
+}
+
+.tienda-portada-contenido {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.tienda-portada-contenido p {
+    margin-bottom: 13px;
+    color: var(--rojo);
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.tienda-portada-contenido h1 {
+    font-family: "Archivo Black", sans-serif;
+    font-size: clamp(65px, 10vw, 145px);
+    line-height: 0.78;
+    letter-spacing: -8px;
+}
+
+.tienda-portada-contenido > span {
+    padding-bottom: 6px;
+
+    color: #a3a3a3;
+
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: right;
+}
+
+
+/* Catálogo */
+
+.tienda-catalogo {
+    min-height: 700px;
+}
+
+.producto-ver {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.producto-imagen-enlace {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.sin-resultados i {
+    margin-bottom: 20px;
+    color: var(--rojo);
+    font-size: 30px;
+}
+
+.sin-resultados h3 {
+    margin-bottom: 10px;
+
+    color: var(--negro);
+    font-family: "Archivo Black", sans-serif;
+    font-size: 24px;
+}
+
+.sin-resultados p {
+    color: var(--gris);
+    font-size: 13px;
+}
+
+
+/* Adaptación */
+
+@media (max-width: 750px) {
+
+    .tienda-portada {
+        min-height: 330px;
+        padding: 40px 20px 50px;
+    }
+
+    .tienda-portada-contenido {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tienda-portada-contenido h1 {
+        letter-spacing: -5px;
+    }
+
+    .tienda-portada-contenido > span {
+        text-align: left;
+    }
+}
