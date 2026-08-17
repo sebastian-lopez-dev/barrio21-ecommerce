@@ -49,6 +49,10 @@ El proyecto fue desarrollado con HTML, CSS y JavaScript puro, con una interfaz a
 
 Este proyecto es una demostración frontend. No procesa pagos reales y no utiliza todavía un backend o una base de datos.
 
+## Demo en vivo
+
+[Ver BARRIO21 funcionando](https://sebastian-lopez-dev.github.io/barrio21-ecommerce/)
+
 ## Autor
 
 Sebastian Alexander Lopez Cutipa  
