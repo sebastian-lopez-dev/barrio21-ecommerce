@@ -109,7 +109,7 @@ function crearCarritoGlobal() {
                 </div>
 
                 <p>
-                    El costo de envío se calculará al finalizar
+                    El costo de envÃ­o se calcularÃ¡ al finalizar
                     la compra.
                 </p>
 
@@ -181,11 +181,11 @@ function renderizarCarritoGlobal() {
 
                 <i class="fa-solid fa-bag-shopping"></i>
 
-                <h3>TU CARRITO ESTÁ VACÍO</h3>
+                <h3>TU CARRITO ESTÃ VACÃO</h3>
 
                 <p>
-                    Explora la colección y encuentra
-                    tu próximo estilo.
+                    Explora la colecciÃ³n y encuentra
+                    tu prÃ³ximo estilo.
                 </p>
 
             </div>
@@ -276,7 +276,7 @@ function renderizarCarritoGlobal() {
                                     data-accion="disminuir"
                                     aria-label="Disminuir"
                                 >
-                                    −
+                                    âˆ’
                                 </button>
 
                                 <span>${item.cantidad}</span>
@@ -356,7 +356,24 @@ function ajustarCarritoGlobalAlViewport() {
             `${vista.height}px`,
             "important"
         );
+
+        return;
     }
+
+    /*
+       Si el celular gira o la ventana vuelve a ser grande,
+       retiramos los valores mÃ³viles para recuperar el CSS normal.
+    */
+
+    [
+        "width",
+        "max-width",
+        "left",
+        "right",
+        "height"
+    ].forEach((propiedad) => {
+        panel.style.removeProperty(propiedad);
+    });
 }
 
 // ==========================================
@@ -500,6 +517,36 @@ document.addEventListener("DOMContentLoaded", () => {
     crearCarritoGlobal();
     cargarCarritoGlobal();
     actualizarContadoresGlobales();
+
+    const actualizarCarritoVisible = () => {
+
+        const panel =
+            document.querySelector(
+                "#carritoPanelGlobal"
+            );
+
+        if (panel.classList.contains("visible")) {
+            ajustarCarritoGlobalAlViewport();
+        }
+    };
+
+    window.addEventListener(
+        "resize",
+        actualizarCarritoVisible
+    );
+
+    if (window.visualViewport) {
+
+        window.visualViewport.addEventListener(
+            "resize",
+            actualizarCarritoVisible
+        );
+
+        window.visualViewport.addEventListener(
+            "scroll",
+            actualizarCarritoVisible
+        );
+    }
 
 
     const botonAbrir =

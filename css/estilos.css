@@ -1,5 +1,5 @@
 /* ==============================
-   CONFIGURACIÓN GENERAL
+   CONFIGURACIÃ“N GENERAL
 ================================= */
 
 :root {
@@ -18,12 +18,33 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    overscroll-behavior-x: none;
 }
 
 body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
     background-color: var(--crema);
     color: var(--negro);
     font-family: "DM Sans", sans-serif;
+}
+
+/*
+   Los paneles del menÃº y del carrito se ocultan fuera de la pantalla.
+   En algunos navegadores mÃ³viles sus transformaciones aumentan el ancho
+   desplazable del documento. Esta regla evita ese espacio lateral vacÃ­o.
+*/
+
+@supports (overflow: clip) {
+
+    html,
+    body {
+        overflow-x: clip;
+    }
 }
 
 a {
@@ -596,7 +617,7 @@ button {
 }
 
 /* ==============================
-   CATÁLOGO DE PRODUCTOS
+   CATÃLOGO DE PRODUCTOS
 ================================= */
 
 .catalogo {
@@ -770,7 +791,7 @@ button {
 }
 
 
-/* Catálogo en tablets */
+/* CatÃ¡logo en tablets */
 
 @media (max-width: 1050px) {
 
@@ -780,7 +801,7 @@ button {
 }
 
 
-/* Catálogo en celulares */
+/* CatÃ¡logo en celulares */
 
 @media (max-width: 750px) {
 
@@ -866,7 +887,7 @@ button {
 }
 
 
-/* Categorías */
+/* CategorÃ­as */
 
 .filtros-categorias {
     display: flex;
@@ -926,7 +947,7 @@ button {
 }
 
 
-/* Filtros en pantallas pequeñas */
+/* Filtros en pantallas pequeÃ±as */
 
 @media (max-width: 1100px) {
 
@@ -1002,7 +1023,7 @@ button {
     display: grid;
 }
 
-/* Botón superior mostrando favoritos */
+/* BotÃ³n superior mostrando favoritos */
 
 #botonFavoritos.mostrando-favoritos {
     background-color: var(--negro);
@@ -1014,7 +1035,7 @@ button {
 }
 
 /* ==============================
-   VISTA RÁPIDA DEL PRODUCTO
+   VISTA RÃPIDA DEL PRODUCTO
 ================================= */
 
 .modal-fondo {
@@ -1249,7 +1270,7 @@ body.modal-abierto {
 }
 
 
-/* Vista rápida en celulares */
+/* Vista rÃ¡pida en celulares */
 
 @media (max-width: 750px) {
 
@@ -1279,7 +1300,7 @@ body.modal-abierto {
 }
 
 /* ==============================
-   NOTIFICACIÓN DEL CARRITO
+   NOTIFICACIÃ“N DEL CARRITO
 ================================= */
 
 .notificacion-carrito {
@@ -1380,12 +1401,19 @@ body.modal-abierto {
     background-color: var(--crema);
     box-shadow: -15px 0 50px rgba(0, 0, 0, 0.2);
 
+    visibility: hidden;
+    pointer-events: none;
     transform: translateX(105%);
-    transition: transform 0.4s ease;
+    transition:
+        transform 0.4s ease,
+        visibility 0s linear 0.4s;
 }
 
 .carrito-panel.visible {
+    visibility: visible;
+    pointer-events: auto;
     transform: translateX(0);
+    transition-delay: 0s;
 }
 
 
@@ -2006,7 +2034,7 @@ body.carrito-abierto {
 }
 
 
-/* Confirmación */
+/* ConfirmaciÃ³n */
 
 .checkout-exito {
     min-height: 580px;
@@ -2121,7 +2149,7 @@ body.checkout-abierto {
 }
 
 /* ==============================
-   MENÚ MÓVIL
+   MENÃš MÃ“VIL
 ================================= */
 
 .menu-fondo {
@@ -2730,7 +2758,7 @@ body.checkout-abierto {
 }
 
 /* ==============================
-   INICIO CON CATÁLOGO RESUMIDO
+   INICIO CON CATÃLOGO RESUMIDO
 ================================= */
 
 .pagina-inicio .herramientas-catalogo {
@@ -2790,7 +2818,7 @@ body.checkout-abierto {
 }
 
 /* ==============================
-   CARRITO EN CELULARES PEQUEÑOS
+   CARRITO EN CELULARES PEQUEÃ‘OS
 ================================= */
 
 @media (max-width: 420px) {
