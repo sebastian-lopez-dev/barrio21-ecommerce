@@ -118,12 +118,7 @@ function renderizarProducto() {
     ).textContent = productoActual.sku;
 
 
-    document.querySelector(
-        "#productoStock"
-    ).innerHTML = `
-        <i class="fa-solid fa-circle"></i>
-        ${productoActual.stock} unidades disponibles
-    `;
+    actualizarStockVisual();
 
 
     renderizarTallas();
@@ -136,6 +131,17 @@ function renderizarProducto() {
 // ==========================================
 // PRODUCTO NO ENCONTRADO
 // ==========================================
+
+function actualizarStockVisual() {
+
+    document.querySelector(
+        "#productoStock"
+    ).innerHTML = `
+        <i class="fa-solid fa-circle"></i>
+        ${productoActual.stock} unidades disponibles
+    `;
+}
+
 
 function mostrarProductoNoEncontrado() {
 
@@ -703,6 +709,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     renderizarProducto();
+
+
+    // Mostrar el stock real cuando responde el servidor
+
+    document.addEventListener(
+        "catalogo-actualizado",
+        actualizarStockVisual
+    );
 
 
     const contenedorTallas =
