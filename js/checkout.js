@@ -182,11 +182,11 @@ function renderizarCheckout() {
                         </h3>
 
                         <p>
-                            Talla: ${item.talla}
+                            Talla: ${escaparHTML(item.talla)}
                         </p>
 
                         <p>
-                            Cantidad: ${item.cantidad}
+                            Cantidad: ${escaparHTML(item.cantidad)}
                         </p>
 
                     </div>
@@ -439,8 +439,8 @@ function mostrarAvisoCheckout(
         <i class="fa-solid fa-triangle-exclamation"></i>
 
         <div>
-            <strong>${titulo}</strong>
-            <span>${detalle}</span>
+            <strong>${escaparHTML(titulo)}</strong>
+            <span>${escaparHTML(detalle)}</span>
         </div>
     `;
 
