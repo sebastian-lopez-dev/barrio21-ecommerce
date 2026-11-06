@@ -369,6 +369,40 @@ function guardarPedido(datosCliente) {
 
 
 // ==========================================
+// REGISTRAR EN EL SERVIDOR O EN EL NAVEGADOR
+// ==========================================
+
+async function registrarPedido(datosCliente) {
+
+    await catalogoListo;
+
+
+    // Sin servidor: modo demostración en localStorage
+
+    if (!modoServidor) {
+        return guardarPedido(datosCliente);
+    }
+
+
+    const cliente = {
+        nombre: datosCliente.nombre,
+        correo: datosCliente.correo,
+        celular: datosCliente.celular,
+        direccion: datosCliente.direccion,
+        distrito: datosCliente.distrito,
+        referencia: datosCliente.referencia,
+        departamento: datosCliente.departamento,
+        metodoPago: datosCliente.metodoPago
+    };
+
+
+    // El total que vale es el que calcula el servidor
+
+    return enviarPedidoAPI(cliente, carrito);
+}
+
+
+// ==========================================
 // MOSTRAR CONFIRMACIÓN
 // ==========================================
 
@@ -469,7 +503,7 @@ function mostrarAvisoCheckout(
 // PROCESAR EL FORMULARIO
 // ==========================================
 
-function procesarPedido(evento) {
+async function procesarPedido(evento) {
 
     evento.preventDefault();
 
@@ -519,8 +553,34 @@ function procesarPedido(evento) {
     guardarDatosCliente(datosCliente);
 
 
-    const pedido =
-        guardarPedido(datosCliente);
+    const botonConfirmar =
+        formulario.querySelector(
+            "button[type='submit']"
+        );
+
+    botonConfirmar.disabled = true;
+
+
+    let pedido;
+
+    try {
+
+        pedido =
+            await registrarPedido(datosCliente);
+
+    } catch (error) {
+
+        mostrarAvisoCheckout(
+            "NO SE PUDO CONFIRMAR",
+            error.message
+        );
+
+        return;
+
+    } finally {
+
+        botonConfirmar.disabled = false;
+    }
 
 
     // Vaciar el carrito después de confirmar
@@ -550,6 +610,14 @@ document.addEventListener("DOMContentLoaded", () => {
     limpiarProductosInvalidos();
     cargarDatosCliente();
     renderizarCheckout();
+
+
+    // Si el servidor trae precios nuevos, actualizar el resumen
+
+    document.addEventListener(
+        "catalogo-actualizado",
+        renderizarCheckout
+    );
 
 
     document.querySelector(
