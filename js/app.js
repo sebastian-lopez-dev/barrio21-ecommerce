@@ -670,7 +670,7 @@ function mostrarNotificacionCarrito(producto, talla) {
             <strong>AGREGADO AL CARRITO</strong>
 
             <span>
-                ${producto.nombre} · Talla ${talla}
+                ${producto.nombre} · Talla ${escaparHTML(talla)}
             </span>
         </div>
     `;
@@ -702,6 +702,18 @@ function agregarAlCarrito(producto, talla) {
     cargarCarritoGlobal();
 
 
+    // El stock es del producto, así que se cuentan todas las tallas
+
+    if (
+        obtenerUnidadesProducto(
+            carritoGlobal,
+            producto.id
+        ) >= producto.stock
+    ) {
+        return;
+    }
+
+
     const productoExistente =
         carritoGlobal.find((item) =>
             item.id === producto.id &&
@@ -710,10 +722,6 @@ function agregarAlCarrito(producto, talla) {
 
 
     if (productoExistente) {
-
-        if (productoExistente.cantidad >= producto.stock) {
-            return;
-        }
 
         productoExistente.cantidad += 1;
 

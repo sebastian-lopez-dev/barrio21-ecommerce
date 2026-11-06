@@ -355,6 +355,43 @@ function agregarProductoAlCarrito() {
     errorTalla.style.display = "none";
 
 
+    // Leer el carrito actual: pudo cambiar desde el panel lateral
+
+    carrito =
+        leerLocalStorage(
+            "barrio21_carrito",
+            []
+        );
+
+
+    // El stock es del producto, así que se cuentan todas las tallas
+
+    const disponibles =
+        productoActual.stock -
+        obtenerUnidadesProducto(
+            carrito,
+            productoActual.id
+        );
+
+
+    if (disponibles <= 0) {
+
+        mostrarNotificacionProducto(
+            "SIN STOCK DISPONIBLE",
+            `Ya tienes todas las unidades de ${productoActual.nombre} en tu carrito.`
+        );
+
+        return;
+    }
+
+
+    const cantidadAgregar =
+        Math.min(
+            cantidadSeleccionada,
+            disponibles
+        );
+
+
     const itemExistente =
         carrito.find((item) =>
             item.id === productoActual.id &&
@@ -364,22 +401,14 @@ function agregarProductoAlCarrito() {
 
     if (itemExistente) {
 
-        itemExistente.cantidad = Math.min(
-            itemExistente.cantidad +
-            cantidadSeleccionada,
-
-            productoActual.stock
-        );
+        itemExistente.cantidad += cantidadAgregar;
 
     } else {
 
         carrito.push({
             id: productoActual.id,
             talla: tallaSeleccionada,
-            cantidad: Math.min(
-                cantidadSeleccionada,
-                productoActual.stock
-            )
+            cantidad: cantidadAgregar
         });
     }
 
@@ -414,8 +443,8 @@ function mostrarNotificacionProducto(
         <i class="fa-solid fa-circle-check"></i>
 
         <div>
-            <strong>${titulo}</strong>
-            <span>${detalle}</span>
+            <strong>${escaparHTML(titulo)}</strong>
+            <span>${escaparHTML(detalle)}</span>
         </div>
     `;
 

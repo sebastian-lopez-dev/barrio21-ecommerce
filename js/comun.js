@@ -97,3 +97,29 @@ function colocarAnioActual(selector) {
             new Date().getFullYear();
     }
 }
+
+// Unidades de un producto en el carrito, sumando todas sus tallas
+
+function obtenerUnidadesProducto(carrito, idProducto) {
+
+    return carrito
+        .filter((item) => item.id === idProducto)
+        .reduce(
+            (total, item) =>
+                total + Number(item.cantidad || 0),
+            0
+        );
+}
+
+
+// Escapar texto antes de insertarlo con innerHTML
+
+function escaparHTML(texto) {
+
+    return String(texto ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+}

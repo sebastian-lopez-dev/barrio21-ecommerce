@@ -225,8 +225,8 @@ function renderizarCarritoGlobal() {
             return `
                 <article
                     class="carrito-item"
-                    data-id="${item.id}"
-                    data-talla="${item.talla}"
+                    data-id="${escaparHTML(item.id)}"
+                    data-talla="${escaparHTML(item.talla)}"
                 >
 
                     <div class="carrito-item-imagen">
@@ -265,7 +265,7 @@ function renderizarCarritoGlobal() {
                         </div>
 
                         <p class="carrito-item-talla">
-                            Talla: ${item.talla}
+                            Talla: ${escaparHTML(item.talla)}
                         </p>
 
                         <div class="carrito-item-inferior">
@@ -279,7 +279,7 @@ function renderizarCarritoGlobal() {
                                     −
                                 </button>
 
-                                <span>${item.cantidad}</span>
+                                <span>${escaparHTML(item.cantidad)}</span>
 
                                 <button
                                     data-accion="aumentar"
@@ -479,7 +479,10 @@ function ejecutarAccionCarritoGlobal(
 
         if (
             producto &&
-            item.cantidad < producto.stock
+            obtenerUnidadesProducto(
+                carritoGlobal,
+                idProducto
+            ) < producto.stock
         ) {
             item.cantidad += 1;
         }
