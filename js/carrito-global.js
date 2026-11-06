@@ -109,7 +109,7 @@ function crearCarritoGlobal() {
                 </div>
 
                 <p>
-                    El costo de envÃ­o se calcularÃ¡ al finalizar
+                    El costo de envío se calculará al finalizar
                     la compra.
                 </p>
 
@@ -181,11 +181,11 @@ function renderizarCarritoGlobal() {
 
                 <i class="fa-solid fa-bag-shopping"></i>
 
-                <h3>TU CARRITO ESTÃ VACÃO</h3>
+                <h3>TU CARRITO ESTÁ VACÍO</h3>
 
                 <p>
-                    Explora la colecciÃ³n y encuentra
-                    tu prÃ³ximo estilo.
+                    Explora la colección y encuentra
+                    tu próximo estilo.
                 </p>
 
             </div>
@@ -276,7 +276,7 @@ function renderizarCarritoGlobal() {
                                     data-accion="disminuir"
                                     aria-label="Disminuir"
                                 >
-                                    âˆ’
+                                    −
                                 </button>
 
                                 <span>${item.cantidad}</span>
@@ -362,7 +362,7 @@ function ajustarCarritoGlobalAlViewport() {
 
     /*
        Si el celular gira o la ventana vuelve a ser grande,
-       retiramos los valores mÃ³viles para recuperar el CSS normal.
+       retiramos los valores móviles para recuperar el CSS normal.
     */
 
     [
@@ -555,6 +555,9 @@ document.addEventListener("DOMContentLoaded", () => {
         ) ||
         document.querySelector(
             "#botonCarritoProducto"
+        ) ||
+        document.querySelector(
+            "#botonCarrito"
         );
 
 

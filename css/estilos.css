@@ -1,5 +1,5 @@
 /* ==============================
-   CONFIGURACIÃ“N GENERAL
+   CONFIGURACIÓN GENERAL
 ================================= */
 
 :root {
@@ -34,9 +34,9 @@ body {
 }
 
 /*
-   Los paneles del menÃº y del carrito se ocultan fuera de la pantalla.
-   En algunos navegadores mÃ³viles sus transformaciones aumentan el ancho
-   desplazable del documento. Esta regla evita ese espacio lateral vacÃ­o.
+   Los paneles del menú y del carrito se ocultan fuera de la pantalla.
+   En algunos navegadores móviles sus transformaciones aumentan el ancho
+   desplazable del documento. Esta regla evita ese espacio lateral vacío.
 */
 
 @supports (overflow: clip) {
@@ -617,7 +617,7 @@ button {
 }
 
 /* ==============================
-   CATÃLOGO DE PRODUCTOS
+   CATÁLOGO DE PRODUCTOS
 ================================= */
 
 .catalogo {
@@ -791,7 +791,7 @@ button {
 }
 
 
-/* CatÃ¡logo en tablets */
+/* Catálogo en tablets */
 
 @media (max-width: 1050px) {
 
@@ -801,7 +801,7 @@ button {
 }
 
 
-/* CatÃ¡logo en celulares */
+/* Catálogo en celulares */
 
 @media (max-width: 750px) {
 
@@ -887,7 +887,7 @@ button {
 }
 
 
-/* CategorÃ­as */
+/* Categorías */
 
 .filtros-categorias {
     display: flex;
@@ -947,7 +947,7 @@ button {
 }
 
 
-/* Filtros en pantallas pequeÃ±as */
+/* Filtros en pantallas pequeñas */
 
 @media (max-width: 1100px) {
 
@@ -1023,7 +1023,7 @@ button {
     display: grid;
 }
 
-/* BotÃ³n superior mostrando favoritos */
+/* Botón superior mostrando favoritos */
 
 #botonFavoritos.mostrando-favoritos {
     background-color: var(--negro);
@@ -1035,7 +1035,7 @@ button {
 }
 
 /* ==============================
-   VISTA RÃPIDA DEL PRODUCTO
+   VISTA RÁPIDA DEL PRODUCTO
 ================================= */
 
 .modal-fondo {
@@ -1270,7 +1270,7 @@ body.modal-abierto {
 }
 
 
-/* Vista rÃ¡pida en celulares */
+/* Vista rápida en celulares */
 
 @media (max-width: 750px) {
 
@@ -1300,7 +1300,7 @@ body.modal-abierto {
 }
 
 /* ==============================
-   NOTIFICACIÃ“N DEL CARRITO
+   NOTIFICACIÓN DEL CARRITO
 ================================= */
 
 .notificacion-carrito {
@@ -2034,7 +2034,7 @@ body.carrito-abierto {
 }
 
 
-/* ConfirmaciÃ³n */
+/* Confirmación */
 
 .checkout-exito {
     min-height: 580px;
@@ -2149,7 +2149,7 @@ body.checkout-abierto {
 }
 
 /* ==============================
-   MENÃš MÃ“VIL
+   MENÚ MÓVIL
 ================================= */
 
 .menu-fondo {
@@ -2758,7 +2758,7 @@ body.checkout-abierto {
 }
 
 /* ==============================
-   INICIO CON CATÃLOGO RESUMIDO
+   INICIO CON CATÁLOGO RESUMIDO
 ================================= */
 
 .pagina-inicio .herramientas-catalogo {
@@ -2818,7 +2818,7 @@ body.checkout-abierto {
 }
 
 /* ==============================
-   CARRITO EN CELULARES PEQUEÃ‘OS
+   CARRITO EN CELULARES PEQUEÑOS
 ================================= */
 
 @media (max-width: 420px) {
