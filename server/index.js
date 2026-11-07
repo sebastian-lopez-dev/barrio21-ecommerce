@@ -1,28 +1,10 @@
-// ==========================================
-// INICIAR EL SERVIDOR
-// ==========================================
+const express = require("express");
+const app = express();
 
-const path = require("node:path");
+app.get("/api/salud", (req, res) => {
+    res.json({ estado: "ok" });
+});
 
-const { abrirBaseDeDatos } = require("./db");
-const { crearApp } = require("./app");
-
-const PUERTO = Number(process.env.PORT) || 3000;
-
-const RUTA_BASE_DATOS =
-    process.env.DB_PATH ||
-    path.join(__dirname, "..", "datos", "barrio21.db");
-
-
-require("node:fs").mkdirSync(
-    path.dirname(RUTA_BASE_DATOS),
-    { recursive: true }
-);
-
-
-const db = abrirBaseDeDatos(RUTA_BASE_DATOS);
-const app = crearApp(db);
-
-app.listen(PUERTO, () => {
-    console.log(`BARRIO21 funcionando en http://localhost:${PUERTO}`);
+app.listen(3000, () => {
+    console.log("Servidor en http://localhost:3000");
 });
